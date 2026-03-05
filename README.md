@@ -117,12 +117,6 @@ python backend/app.py
 * Deploy system as a cloud-based service
 * Add visualization of detected anomalies in audio
 
----
-
-## Contributors
-
-* Geetika Emani
-* Project collaborators
 
 ---
 
