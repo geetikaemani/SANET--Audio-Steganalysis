@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SANet - Ghost in the Spectrum</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<div class="app-layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2 class="sidebar-title">👻 SANet</h2>
+
+        <div class="nav-links">
+            <button class="nav-item active" data-screen="upload">Home</button>
+            <button class="nav-item" data-screen="history">History</button>
+        </div>
+
+        <button id="themeToggle" class="theme-toggle">☀️ Light Mode</button>
+    </aside>
+
+    <!-- Main -->
+    <section class="content">
+
+        <!-- UPLOAD -->
+        <div id="uploadScreen" class="screen visible">
+            <div class="glass-card">
+                <h1>Ghost in the Spectrum</h1>
+                <p class="subtitle">Upload an audio file to detect hidden steganographic signals.</p>
+
+                <div class="ghost" id="ghost">
+                    <div class="body"></div>
+                    <div class="eye left"></div>
+                    <div class="eye right"></div>
+                    <div class="mouth"></div>
+                    <div class="shadow"></div>
+                </div>
+
+                <label for="audioFile" class="upload-btn">🎤 Select Audio File</label>
+                <input type="file" id="audioFile" accept="audio/*" hidden>
+                <p id="filename" style="text-align:center; opacity:.7;">No file selected</p>
+
+                <button id="analyzeBtn" class="btn-primary" disabled>🔍 Start Scan</button>
+            </div>
+        </div>
+
+        <!-- STATUS -->
+        <div id="statusScreen" class="screen">
+            <div class="glass-card">
+                <h2>Scanning...</h2>
+
+                <div class="progress-container">
+                    <div id="progressBar"></div>
+                </div>
+
+                <p id="progressText" style="text-align:center; font-size:18px; opacity:.8;">Initializing...</p>
+            </div>
+        </div>
+
+        <!-- RESULT -->
+        <div id="resultScreen" class="screen">
+            <div class="glass-card">
+                <h2>Scan Result</h2>
+
+                <p id="predictionText" style="font-size:22px;font-weight:bold;"></p>
+                <p id="confidenceText"></p>
+
+                <div class="result-images">
+                    <img id="plot1" src="">
+                    <img id="plot2" src="">
+                </div>
+
+                <a id="reportBtn" href="#" class="btn-secondary" download>📄 Download PDF</a>
+                <button id="restartBtn" class="btn-primary">↩ Restart</button>
+            </div>
+        </div>
+
+        <!-- HISTORY -->
+        <div id="historyScreen" class="screen">
+            <div class="glass-card">
+                <h2>Scan History</h2>
+                <p id="historyEmpty" style="opacity:.6;text-align:center;">No scans yet.</p>
+                <ul id="historyList"></ul>
+
+                <button id="clearHistoryBtn" class="btn-secondary">🗑 Clear History</button>
+            </div>
+        </div>
+
+    </section>
+</div>
+
+<script src="/static/js/main.js"></script>
+</body>
+</html>
